@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+dependencies {
+	compile files("${System.properties['java.home']}/../lib/tools.jar")
+
+	// I learned how to add the tools.jar dependency from the following stackoverflow question
+	// http://stackoverflow.com/questions/11345193/gradle-does-not-find-tools-jar
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs "src"
+		}
+	}
+}
